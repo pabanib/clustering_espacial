@@ -1,0 +1,35 @@
+casos:
+  - nombre: masa_puestos
+    variables: [masa_cer, puestos]
+    poblacion: personas
+    n_clusters_d: 30
+    n_clusters_h: 31
+    semilla: 42
+    matriz: 4
+    procesar: false
+  - nombre: masa_puestos2
+    variables: [masa_cer, puestos]
+    poblacion: personas
+    n_clusters_d: 10
+    n_clusters_h: 50
+    semilla: 42
+    matriz: 4
+    procesar: True
+  - nombre: industrial_resto
+    variables: [C, resto]
+    poblacion: personas
+    n_clusters_d: 10
+    n_clusters_h: 50
+    semilla: 42
+    matriz: 4
+    procesar: False
+  - nombre: industrial_resto2
+    variables: [C, resto]
+    poblacion: puestos
+    n_clusters_d: 10
+    n_clusters_h: 50
+    semilla: 42
+    matriz: 4
+    procesar: False
+
+    

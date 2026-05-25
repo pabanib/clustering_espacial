@@ -1,0 +1,1 @@
+import salarios.entrenador as entr

@@ -1,0 +1,28 @@
+#Datos
+datos/originales
+datos/procesados
+datos/simulaciones
+
+# resultados
+resultados/covid
+resultados/salarios
+resultados/simulaciones
+resultados/imagenes
+
+
+desuso
+*.pyc
+*.jpg
+__pycache__/
+*.ipynb_checkpoints
+*.log
+*.vscode/
+/analisis/DEC_rgeoda.ipynb
+.ipynb_checkpoints/
+
+# Conda / venv
+env/
+venv/
+.venv
+
+.pdf
