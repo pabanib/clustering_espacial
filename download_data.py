@@ -1,25 +1,30 @@
 """
 Script para descargar los datos del paper desde Zenodo.
 Ejecutar desde la raíz del proyecto: python download_data.py
+
+Requiere: pip install rarfile
+Windows: conda install -c conda-forge unrar
+Linux:   sudo apt install unrar
+Mac:     brew install rar
 """
 
 import os
 import urllib.request
-import rarfile  # pip install rarfile
+import rarfile
 
-ZENODO_ID = "20380822"
+ZENODO_ID = "20381447"
 BASE_URL = f"https://zenodo.org/records/{ZENODO_ID}/files"
 
 ARCHIVOS = {
-    "covid.rar":        "datos/procesados/covid/",
-    "salarios.rar":     "datos/procesados/salarios/",
-    "simulaciones.rar": "datos/procesados/simulaciones/",
-    "resultados.rar":   "resultados/",
+    "covid.rar":        "datos/procesados/",
+    "salarios.rar":     "datos/procesados/",
+    "simulaciones.rar": "datos/procesados/",
+    "resultados.rar":   ".",
 }
 
 
 def descargar(nombre, destino):
-    url = f"{BASE_URL}/{nombre}"
+    url = f"{BASE_URL}/{nombre}?download=1"
     path_rar = os.path.join(destino, nombre)
     os.makedirs(destino, exist_ok=True)
 
@@ -33,17 +38,17 @@ def descomprimir(path_rar, destino):
     print(f"📦 Descomprimiendo {os.path.basename(path_rar)}...")
     with rarfile.RarFile(path_rar) as rf:
         rf.extractall(destino)
-    os.remove(path_rar)  # borra el .rar una vez descomprimido
+    os.remove(path_rar)
     print(f"   ✅ Listo en {destino}")
 
 
 if __name__ == "__main__":
     print("=" * 50)
-    print("Descarga de datos - clustering_espacial")
+    print("Descarga de datos - Spatial Deep Embedding Clustering")
+    print("Zenodo DOI: 10.5281/zenodo.20381447")
     print("=" * 50)
 
     for archivo, carpeta in ARCHIVOS.items():
-        # Verificar si ya existe contenido en la carpeta
         if os.path.exists(carpeta) and len(os.listdir(carpeta)) > 0:
             print(f"⏭️  Ya existe: {carpeta} — saltando")
             continue

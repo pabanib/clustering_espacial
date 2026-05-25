@@ -14,3 +14,5 @@ requests
 shapely
 fiona
 rtree
+rarfile
+unrar
