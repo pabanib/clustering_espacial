@@ -25,4 +25,5 @@ env/
 venv/
 .venv
 
-.pdf
+*.pdf
+*.rar
