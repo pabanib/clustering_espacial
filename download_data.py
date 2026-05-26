@@ -49,7 +49,7 @@ if __name__ == "__main__":
     print("=" * 50)
 
     for archivo, carpeta in ARCHIVOS.items():
-        if os.path.exists(carpeta) and len(os.listdir(carpeta)) > 0:
+        if os.path.exists(os.path.join(carpeta, archivo)):
             print(f"⏭️  Ya existe: {carpeta} — saltando")
             continue
 
